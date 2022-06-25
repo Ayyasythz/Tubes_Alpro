@@ -1,0 +1,45 @@
+{% extends "base2.html" %}{% block title %} HOME {% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='real_css/register.css') }}">
+<div class="center">
+    <h1>Register</h1>
+    <form action="" method="post">
+        <div class="txt_field">
+            <input type="email" name="email" id="email" required autocomplete="off">
+            <span></span>
+            <label for="email">Email</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" name="username" id="username" required  autocomplete="off">
+            <span></span>
+            <label for="username">Username</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" name="fullname" id="fullname" required autocomplete="off">
+            <span></span>
+            <label for="fullname">Fullname</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" name="password" id="password" required  autocomplete="off">
+          <span></span>
+          <label for="password">Password</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="passwordc" id="passwordc" required autocomplete="off">
+        <span></span>
+        <label for="passwordc">Password (Confirm) </label>
+      </div>
+      <div class="form-group mb-4">
+        <label for="">Gender</label>
+        <select class="form-control" name="gender" id="gender" >
+          <option>Laki - Laki</option>
+          <option>Perempuan</option>
+        </select>
+      </div>
+
+        <input type="submit" value="Register" class="login_button mb-3">
+        
+
+    </form>
+</div>
+
+{% endblock %}

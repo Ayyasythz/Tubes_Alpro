@@ -1,0 +1,15 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+
+.entry-image{
+	transition: 0.4s;
+}
+
+.entry-image:hover{
+	transition: 0.4s;
+	box-shadow: 3px 3px 5px rgb(70, 69, 69);
+}

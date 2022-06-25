@@ -1,0 +1,26 @@
+{% extends "base2.html" %}{% block title %} HOME {% endblock %} {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='real_css/login.css') }}">
+<div class="center">
+    <h1>Login</h1>
+    <form  method="post">
+        <div class="txt_field">
+            <input type="email" name="email" id="email"  required autocomplete="off">
+            <span></span>
+            <label for="email">Email</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="password" id="password" required autocomplete="off">
+            <span></span>
+            <label for="password">Password</label>
+        </div>
+        <input type="submit" value="Login" class="login_button">
+        <div class="sign-up">
+            Dont have an account? <a href="{{url_for('auth.register')}}">Register</a>
+        </div>
+
+    </form>
+</div>
+
+
+
+{% endblock %}

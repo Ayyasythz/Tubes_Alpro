@@ -1,0 +1,236 @@
+{% extends "base.html" %}{% block title %} HOME {% endblock %} {% block content %}
+<body class="stretched search-overlay">
+
+        <!-- Document Wrapper
+        ============================================= -->
+        <div id="wrapper">
+    
+            <!-- Header
+            ============================================= -->
+            <header id="header" class="header-size-custom" data-sticky-shrink="false">
+                <div id="header-wrap">
+                    <div class="container">
+                        <div class="header-row justify-content-lg-between">
+
+                            {% for a in range(0,45)%}
+                                &nbsp;
+                            {% endfor %}
+                            <!-- Logo
+                            ============================================= -->
+                            <div id="logo" class="mx-lg-auto col-auto flex-column order-lg-2 px-0 p-3">
+                                <a href="demo-blog.html" class="standard-logo" >Wallpafest</a>
+                            </div><!-- #logo end -->
+    
+    
+                            <div class="header-misc col-auto col-lg-3 justify-content-lg-end ml-0 ml-sm-3 px-0">
+    
+    
+    
+                                <div class="dark-mode header-misc-icon d-none d-md-block">
+                                    <i class="fa-solid fa-moon"></i>
+                                </div>
+                            </div>
+    
+                            <div id="primary-menu-trigger">
+                                <svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="container">
+                        <div class="header-row justify-content-lg-center header-border">
+    
+                            <!-- Primary Navigation
+                            ============================================= -->
+                            <nav class="primary-menu with-arrows">
+    
+                                <ul class="menu-container justify-content-between">
+                                    <li class="menu-item"><a class="menu-link" href="/"><div><i class="fa-solid fa-house"></i> Home</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="/Anime"><div>Anime</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="/Tech"><div>Tech</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="/Design"><div>Design</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="/Abstract"><div>Abstract</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="/Arts"><div>Arts</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="/Illustration"><div>Illustrations</div></a></li>
+                                    {% if user.is_authenticated %}
+                                    <li class="menu-item"><a class="menu-link" href="/dashboard/{{current_user.username}}"><div>Dashboard</div></a></li>
+                                    {% else %}
+                                    <li class="menu-item"><a class="menu-link" href="/login"><div>Login</div></a></li>
+                                    {% endif %}
+                                </ul>
+    
+                            </nav><!-- #primary-menu end -->
+    
+                            <form class="top-search-form" action="search.html" method="get">
+                                <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
+                            </form>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="header-wrap-clone"></div>
+    
+            </header><!-- #header end -->
+    
+            <!-- Page Title
+            ============================================= -->
+            <section id="page-title" class="page-title-center">
+    
+                <div class="container">
+                    <img src="{{ url_for('static', filename='img/wallpafest.png') }}" width="400" alt="">
+                    <span>Make your screen beautiful</span>
+                </div>
+    
+            </section><!-- #page-title end -->
+    
+            <!-- Content
+            ============================================= -->
+            <section id="content">
+                <div class="content-wrap pt-0 pt-sm-6">
+                    <div class="container">
+    
+                        <!-- Single Page Categories
+                        ============================================= -->
+                        <div class="row gutter-50">
+                            <div class="col-lg-3 cat-widgets position-sticky h-100" style="top: 234px;">
+                                <div class="widget widget-search">
+                                    <form class="input-group">
+                                        <input class="form-control live-search-box" type="search" placeholder="Search" aria-label="Search">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary icon-line-search" type="button"></button>
+                                          </div>
+                                    </form>
+                                </div>
+    
+                                <div class="widget widget-nav mt-md-5">
+                                    <ul class="nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">All Categories</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Anime">Anime</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Tech">Tech</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Beauty">Beauty</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Design">Design</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Illustration">Illustrations</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Abstract">Abstract</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Fashions">Fashions</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Arts">Arts</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Music">Music</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="col-lg-9 mt-5 mt-lg-0">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <h3>Most Popular Post</h3>
+                                    </div>
+                                    <div>
+                                        <!-- Example single danger button -->
+                                    </div>
+                                </div>
+    
+                                <div class="row col-mb-50 posts-md">
+                                    {% for wallpaper,img in wallpapers%}
+
+                                    <div class="col-md-4 live-search-list">
+                                        <article class="entry">
+                                            <div class="entry-image mb-3">
+                                                <a href="demo-blog-single.html"><img src="data:image/png;charset=utf-8;base64,{{img}}" style="width: 298px;height: 168px ;" data-fancybox="gallery" alt="Image 3"></a>
+                                            </div>
+                                            <div class="entry-title title-sm">
+                                                <div class="entry-categories"><a href="demo-blog-categories.html">{{wallpaper.wallpaperSubTitle}}</a></div>
+                                                <h3>{{wallpaper.wallpaperTitle}}</h3>
+                                            </div>
+                                            <div class="entry-meta">
+                                                <ul>
+                                                    <li>Jun 20 2022<span class="font-weight-bold ml-4">Downloaded : {{wallpaper.downloads}}</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="entry-content mt-3">
+                                                <a href="/download/{{wallpaper.id}}" class="btn btn-success"><i class="fa-solid fa-download"></i> &nbsp; Download</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Page Categories End -->
+    
+                        
+                    </div>
+                </div>
+            </section><!-- #content end -->
+          
+            <!-- Footer
+            ============================================= -->
+            <footer id="footer">
+
+    
+    
+                <!-- Copyrights
+                ============================================= -->
+                <div id="copyrights" class="bg-dark text-white">
+                    <div class="container">
+    
+                        <div class="row align-items-center justify-content-between col-mb-30">
+                            <div class="col-lg-auto text-center text-lg-left">
+                                Copyrights &copy; 2022 All Rights Reserved by Wallpafest<br>
+                                <div class="copyright-links"><a href="#" class="text-white">Terms of Use</a> / <a href="#" class="text-white">Privacy Policy</a></div>
+                            </div>
+    
+                            <div class="col-lg-auto text-center text-lg-left">
+                                <div class="copyrights-menu copyright-links m-0">
+                                    <img src="{{ url_for('static',filename='img/wallpafest.jpg') }}" width="300" alt="">
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div><!-- #copyrights end -->
+            </footer><!-- #footer end -->
+    
+        </div><!-- #wrapper end -->
+    
+        <!-- Go To Top
+        ============================================= -->
+        <div id="gotoTop" class="icon-angle-up rounded-circle" style="left: 30px; left: auto;"></div>
+    
+
+    <script>
+        jQuery(document).ready(function($){
+            $('.live-search-list').each(function(){
+                $(this).attr('data-search')
+            })
+        })
+        
+
+        jQuery('.dark-mode').on( 'click', function() {
+            jQuery("body").toggleClass('dark');
+            SEMICOLON.header.logo();
+            return false;
+        });
+    </script>
+</body>  
+{% endblock %}
